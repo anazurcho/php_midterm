@@ -30,6 +30,7 @@ class QuestionRequest extends FormRequest
             'answer_2_name'=>'required',
             'answer_3_name'=>'required',
             'answer_4_name'=>'required',
+            'is_true'=>'required',
         ];
     }
 }

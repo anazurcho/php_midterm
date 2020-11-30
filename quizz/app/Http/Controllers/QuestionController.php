@@ -12,7 +12,7 @@ class QuestionController extends Controller
 
     public function index()
     {
-        //
+        $this->authorize('is_student');
         $questions = Question::with('answers')->get();
         return view('question/index', compact('questions'));
     }

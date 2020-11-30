@@ -16,9 +16,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', function () {  return view('welcome');});
+
 Route::get('/users/login', [UserController::class, 'login'])->name('login');
 Route::post('/users/post-login', [UserController::class, 'postLogin'])->name('post_login');
 Route::get('/users/register', [UserController::class, 'register'])->name('register');
@@ -31,4 +30,3 @@ Route::post('/questions/save', [QuestionController::class, 'save'])->name('quest
 
 Route::get('/quiz', [QuizController::class, 'index'])->name('quiz')->middleware('auth');
 Route::post('/quiz/save', [QuizController::class, 'save'])->name('quiz.save')->middleware('auth');
-Route::get('/quiz/result', [QuizController::class, 'result'])->name('quiz.result')->middleware('auth');

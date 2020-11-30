@@ -38,5 +38,11 @@ class AuthServiceProvider extends ServiceProvider
                 return false;
             }
         });
+        Gate::define('is_student_true', function (User $user){
+//            return $post->user()->is($user);
+            if($user ->is_student){
+                return true;
+            }
+        });
     }
 }

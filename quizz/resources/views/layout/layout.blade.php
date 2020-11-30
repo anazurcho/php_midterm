@@ -414,14 +414,18 @@
                     <li class="nav-item">
                         <a class="nav-link" href="{{ url('/') }}" class="nav-link">Home</a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href={{route('quiz')}} class="nav-link">Quiz</a>
+                    </li>
                     @can('is_student')
-                    <li class="nav-item">
-                        <a class="nav-link" href={{route('questions.create')}}>Create Questions</a>
-                    </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href={{route('questions.create')}}>Create Questions</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href={{route('questions')}}>Questions</a>
+                        </li>
                     @endcan
-                    <li class="nav-item">
-                        <a class="nav-link" href={{route('questions')}}>Questions</a>
-                    </li>
                     <li class="nav-item">
                         <a class="nav-link" href="{{route('logout')}}"
                            onclick="event.preventDefault(); document.getElementById('logout-form').submit();"
